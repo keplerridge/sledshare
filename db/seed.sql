@@ -6,6 +6,7 @@ CREATE TABLE users(
 
 CREATE TABLE sleds(
     sled_id SERIAL PRIMARY KEY,
+    sled_name VARCHAR(50),
     sled_picture TEXT,
     sled_description TEXT,
     sled_rules TEXT,
