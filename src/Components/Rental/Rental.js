@@ -1,25 +1,16 @@
-import Header from '../Header/Header';
-import Rental from '../Rental/Rental';
-import {useState, useEffect} from 'react';
+import Link from 'react-router-dom';
 
-const Rental = () => {
-    const [rentals, setRentals] = useState([]);
+const Rental = (props) => {
+    const {sledId, name, description, picture, rules, cost} = props;
 
     return (
         <div>
-            <Header />
-            <section>
-                {rentals.map((e) => (
-                    <Rental
-                    key={e.sled_id}
-                    roomId={e.sled_id}
-                    name={e.sled_name}
-                    description={e.sled_description}
-                    picture={e.sled_picture}
-                    rules={e.sled_rules}
-                    cost={e.sled_cost} />
-                ))}
-            </section>
+            <Link to={`/sled/${sledId}`}>
+                <section>
+                    <img src={picture} alt={name} />
+                    <h6>{cost}</h6>
+                </section>
+            </Link>
         </div>
     )
 }
