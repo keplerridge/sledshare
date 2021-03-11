@@ -1,7 +1,13 @@
 DROP TABLE users;
 DROP TABLE sleds;
 
-CREATE TABLE users(
+CREATE TABLE rental_users(
+    user_id SERIAL PRIMARY KEY,
+    email VARCHAR(100),
+    password VARCHAR(50)
+);
+
+CREATE TABLE owner_users(
     user_id SERIAL PRIMARY KEY,
     email VARCHAR(100),
     password VARCHAR(50)
@@ -14,5 +20,5 @@ CREATE TABLE sleds(
     sled_description TEXT,
     sled_rules TEXT,
     sled_cost INT,
-    user_id INT REFERENCES users(user_id)
+    user_id INT REFERENCES owner_users(user_id)
 );
