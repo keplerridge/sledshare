@@ -32,3 +32,6 @@ app.post('/auth/ownerlogin', authOwnerCtrl.login);
 app.get('/auth/ownerlogout', authOwnerCtrl.logout);
 
 //Authentication User Enpoints
+app.post('/auth/registeruser', authUserCtrl.register);
+app.post('/auth/userlogin', authUserCtrl.login);
+app.get('/auth/userlogout', authUserCtrl.logout);
