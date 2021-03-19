@@ -3,8 +3,8 @@ const express = require('express'),
       app = express(),
       massive = require('massive'),
       session = require('express-session'),
-      authOwnerCtrl = requie('./controllers/authOwnerController.js'),
-      authUserCtrl = requie('./controllers/authUserController.'),
+      authOwnerCtrl = require('./controllers/authOwnerController'),
+      authUserCtrl = require('./controllers/authUserController'),
       {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
 
 app.use(express.json());

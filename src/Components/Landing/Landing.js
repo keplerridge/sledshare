@@ -27,7 +27,7 @@ const register = () => {
             alert('Passwords do not match')
         }
     } else {
-        if(password && pasword === verPassword) {
+        if(password && password === verPassword) {
             axios.post('/auth/registeruser', {email, password})
             .then(res => {
                 props.history.push('/profile')
