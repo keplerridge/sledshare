@@ -1,6 +1,5 @@
 const initialState = {
     ownerUser: {},
-    renterUser: {}
 }
 
 const SET_OWNER_USER = 'SET_OWNER_USER',

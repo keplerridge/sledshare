@@ -1,16 +1,17 @@
-DROP TABLE users;
 DROP TABLE sleds;
+DROP TABLE owner_users;
+DROP TABLE rental_users;
 
 CREATE TABLE rental_users(
     user_id SERIAL PRIMARY KEY,
     email VARCHAR(100),
-    password VARCHAR(50)
+    password TEXT
 );
 
 CREATE TABLE owner_users(
     user_id SERIAL PRIMARY KEY,
     email VARCHAR(100),
-    password VARCHAR(50)
+    password TEXT
 );
 
 CREATE TABLE sleds(

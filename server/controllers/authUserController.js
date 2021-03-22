@@ -27,6 +27,11 @@ module.exports = {
             return res.status(406).send('Incorrect email or password');
         }
 
+        const authenticated = bcrypt.compareSync(password, foundUser.password);
+        if(!authenticated){
+            return res.status(406).send('Incorrect email or password')
+        }
+
         delete foundUser.password;
         req.session.user = foundUser;
         res.status(202).send(req.session.user);
